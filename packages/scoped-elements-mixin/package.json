@@ -1,0 +1,11 @@
+{
+  "name": "@academy-lit/scoped-elements-mixin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "files": ["src"],
+  "scripts": {
+    "build": "",
+    "test": ""
+  }
+}
