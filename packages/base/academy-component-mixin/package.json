@@ -1,0 +1,19 @@
+{
+  "name": "@academy-lit/academy-component-mixin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "files": ["src", "index.js"],
+  "scripts": {
+    "build": "",
+    "test": ""
+  },
+  "dependencies": {
+    "@academy-lit/academy-intl-mixin": "workspace:*",
+    "@academy-lit/scoped-elements-mixin": "workspace:*",
+    "lit": "^3.0.0"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  }
+}

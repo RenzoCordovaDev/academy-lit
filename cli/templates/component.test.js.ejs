@@ -1,0 +1,14 @@
+import { fixture, expect, html } from '@open-wc/testing';
+import './<%= componentName %>.js';
+
+describe('<%= componentNamePascal %>', () => {
+  it('renders with default properties', async () => {
+    const el = await fixture(html`<<%= componentName %>>Content</<%= componentName %>>`);
+    expect(el).to.exist;
+  });
+
+  it('renders with text-key', async () => {
+    const el = await fixture(html`<<%= componentName %> text-key="test-key"></<%= componentName %>>`);
+    expect(el).to.exist;
+  });
+});

@@ -1,0 +1,19 @@
+/* Base demo styles for generated demos */
+html, body {
+  height: 100%;
+  margin: 0; /* remove default body margin */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+main {
+  padding: 1rem;
+}
+
+.demo-root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 1rem 0 0 2rem;
+}

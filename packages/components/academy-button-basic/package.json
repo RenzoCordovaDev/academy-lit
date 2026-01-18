@@ -1,0 +1,33 @@
+{
+  "name": "@academy-lit-components/academy-button-basic",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locales.json": "./locales.json"
+  },
+  "files": ["/src/", "/demo/", "index.js", "locales.json"],
+  "scripts": {
+    "build:styles": "node ../../../scripts/compile-scss-to-lit.cjs src/academy-button-basic.styles.scss src/academy-button-basic.styles.js AcademyButtonBasicStyles",
+    "dev": "pnpm run build:styles && vite demo",
+    "build": "pnpm run build:styles && vite build",
+    "test": "web-test-runner \"src/**/*.test.js\""
+  },
+  "dependencies": {
+    "@academy-lit/academy-core": "workspace:*",
+    "@academy-lit/academy-component-mixin": "workspace:*",
+    "@academy-lit/academy-intl-mixin": "workspace:*",
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@academy-lit-components/academy-helper-demo": "workspace:*",
+    "vite": "^5.0.0",
+    "sass": "^1.69.0",
+    "@web/test-runner": "^0.18.0",
+    "@open-wc/testing": "^4.0.0"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  }
+}

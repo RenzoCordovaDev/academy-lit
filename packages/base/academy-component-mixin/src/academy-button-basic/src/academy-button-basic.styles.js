@@ -1,0 +1,20 @@
+import { css } from 'lit';
+
+export const AcademyButtonBasicStyles = css`
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.academy-button-basic {
+  padding: 1rem;
+}
+
+:host([loading]) .academy-button-basic {
+  opacity: 0.5;
+  pointer-events: none;
+}
+`;

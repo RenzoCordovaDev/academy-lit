@@ -1,0 +1,14 @@
+{
+  "name": "@academy-lit/academy-intl-mixin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "files": ["src", "index.js"],
+  "scripts": {
+    "build": "",
+    "test": ""
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@academy-lit/academy-core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "files": ["src", "index.js"],
+  "exports": {
+    ".": "./index.js",
+    "./tokens": "./src/tokens.js",
+    "./utils": "./src/utils.js"
+  },
+  "scripts": {
+    "build": "",
+    "test": ""
+  }
+}

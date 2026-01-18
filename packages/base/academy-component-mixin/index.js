@@ -1,0 +1,1 @@
+export { AcademyComponentMixin } from './src/AcademyComponentMixin.js';

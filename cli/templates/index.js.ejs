@@ -1,0 +1,10 @@
+import locales from './locales.json';
+import { registerTranslations } from '@academy-lit/academy-intl-mixin';
+
+export { <%= componentNamePascal %> } from './src/<%= componentNamePascal %>.js';
+
+import { <%= componentNamePascal %> } from './src/<%= componentNamePascal %>.js';
+registerTranslations(<%= componentNamePascal %>.is, locales);
+
+// Auto-registro del componente
+customElements.define(<%= componentNamePascal %>.is, <%= componentNamePascal %>);

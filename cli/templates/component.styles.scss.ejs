@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.<%= componentName %> {
+  padding: 1rem;
+}
+
+:host([loading]) .<%= componentName %> {
+  opacity: 0.5;
+  pointer-events: none;
+}

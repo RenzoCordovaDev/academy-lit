@@ -2,14 +2,19 @@
   "name": "lit-ecosystem",
   "version": "1.0.0",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
+    "chokidar": "^5.0.0",
     "lerna": "^7.0.0",
-    "pnpm": "^8.0.0"
+    "pnpm": "^8.0.0",
+    "sass": "^1.97.2"
   },
   "scripts": {
     "dev": "pnpm --filter=@academy-lit-components/* run dev",
     "test": "pnpm --filter=@academy-lit-components/* run test",
-    "build": "pnpm --filter=@academy-lit-components/* run build"
+    "build": "pnpm --filter=@academy-lit-components/* run build",
+    "watch:styles": "node ./scripts/watch-scss-to-lit.cjs"
   }
 }

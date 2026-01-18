@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= componentNamePascalSpaced %> Demo</title>
+  <script type="module" src="./demo.js"></script>
+  <link rel="stylesheet" href="./demo-base.css">
+</head>
+<body>
+  <div class="demo-root">
+    <h1><%= componentNamePascalSpaced %> Component Demo</h1>
+    
+    <academy-helper-demo show-locale show-mode show-viewport show-ambient show-events show-cases events="holas">
+    <academy-helper-demo-case header="Demo 1" description="Render con i18n" src="./demo1.html"></academy-helper-demo-case>
+    <academy-helper-demo-case header="Demo 2" description="Render con slot" src="./demo2.html"></academy-helper-demo-case>
+  </academy-helper-demo>
+  </div>
+</body>
+</html>
