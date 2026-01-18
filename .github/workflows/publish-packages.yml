@@ -46,6 +46,7 @@ jobs:
 
       - name: Publish changed packages (from package.json versions)
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           npx lerna publish from-package --yes

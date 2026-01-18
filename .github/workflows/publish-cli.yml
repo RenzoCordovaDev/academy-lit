@@ -33,8 +33,9 @@ jobs:
       - name: Publish CLI
         working-directory: cli
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           npm whoami || echo "Publishing as CI user"
           npm publish --access public
 
