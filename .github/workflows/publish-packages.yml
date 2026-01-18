@@ -36,6 +36,9 @@ jobs:
       - name: Build all packages
         run: pnpm -r build || true
 
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Configure git user
         run: |
           git config user.name "github-actions[bot]"

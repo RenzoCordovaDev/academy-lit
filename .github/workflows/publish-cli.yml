@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Publish CLI
         working-directory: cli
         env:
@@ -34,3 +37,5 @@ jobs:
         run: |
           npm whoami || echo "Publishing as CI user"
           npm publish --access public
+
+      
