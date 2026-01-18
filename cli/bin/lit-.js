@@ -37,7 +37,11 @@ program
     try {
       const componentName = toKebabCase(name);
       const componentNamePascal = toPascalCase(componentName);
-      const packageScope = scope ? `@${scope}/` : '';
+      // Default scope for generated components if none provided
+      const defaultScope = '@academy-lit-components/';
+      const packageScope = scope
+        ? (scope.startsWith('@') ? `${scope}/` : `@${scope}/`)
+        : defaultScope;
       const packageName = `${packageScope}${componentName}`;
       const componentDir = path.join(process.cwd(), componentName);
 
@@ -50,6 +54,7 @@ program
       // Create directory structure
       fs.mkdirSync(path.join(componentDir, 'src'), { recursive: true });
       fs.mkdirSync(path.join(componentDir, 'demo'), { recursive: true });
+      fs.mkdirSync(path.join(componentDir, 'scripts'), { recursive: true });
       // Create test directory at same level as src (user requested)
       fs.mkdirSync(path.join(componentDir, 'test'), { recursive: true });
 
@@ -84,6 +89,8 @@ program
         { template: 'demo.js.ejs', output: 'demo/demo.js' },
         { template: 'vite.config.js.ejs', output: 'vite.config.js' },
         { template: 'web-test-runner.config.js.ejs', output: 'web-test-runner.config.js' },
+        { template: 'scripts/compile-scss-to-lit.cjs.ejs', output: 'scripts/compile-scss-to-lit.cjs' },
+        { template: 'scripts/watch-scss-to-lit.cjs.ejs', output: 'scripts/watch-scss-to-lit.cjs' },
       ];
 
       for (const file of files) {
@@ -101,7 +108,7 @@ program
       console.log(chalk.dim(`\nPróximos pasos:`));
       console.log(chalk.cyan(`  cd ${path.relative(process.cwd(), componentDir)}`));
       console.log(chalk.cyan(`  npm install`));
-      console.log(chalk.cyan(`  lit- serve`));
+      console.log(chalk.cyan(`  npm run dev`));
 
     } catch (error) {
       spinner.fail('Error al generar el componente');

@@ -4,6 +4,7 @@
   "main": "index.js",
   "type": "module",
   "files": ["src", "index.js"],
+  "publishConfig": { "access": "public" },
   "scripts": {
     "build": "",
     "test": ""

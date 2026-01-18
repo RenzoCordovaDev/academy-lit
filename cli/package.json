@@ -2,10 +2,13 @@
   "name": "@academy-lit/lit-cli",
   "version": "1.0.0",
   "bin": {
+    "lit-dev": "bin/lit-.js",
     "lit-": "bin/lit-.js"
   },
   "type": "module",
-  "files": ["bin", "src"],
+  "files": ["bin", "lib", "templates", "README.md"],
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=18" },
   "scripts": {
     "build": "",
     "test": ""

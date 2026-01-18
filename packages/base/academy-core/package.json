@@ -4,6 +4,7 @@
   "main": "index.js",
   "type": "module",
   "files": ["src", "index.js"],
+  "publishConfig": { "access": "public" },
   "exports": {
     ".": "./index.js",
     "./tokens": "./src/tokens.js",

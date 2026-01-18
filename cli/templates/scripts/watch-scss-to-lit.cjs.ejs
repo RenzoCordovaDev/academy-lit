@@ -1,0 +1,74 @@
+<%~`const fs = require('fs');
+const path = require('path');
+const { spawn } = require('child_process');
+let chokidar;
+
+(async () => {
+  try {
+    chokidar = require('chokidar');
+  } catch (e) {
+    chokidar = (await import('chokidar')).default;
+  }
+  startWatcher();
+})();
+
+function startWatcher() {
+  function findScssFiles(dir, files = []) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        findScssFiles(full, files);
+      } else if (entry.isFile() && entry.name.endsWith('.styles.scss')) {
+        files.push(full);
+      }
+    }
+    return files;
+  }
+
+  function toExportName(filePath) {
+    const base = path.basename(filePath).replace('.styles.scss', '');
+    const parts = base.split('-');
+    const pascal = parts.map(p => p[0].toUpperCase() + p.slice(1)).join('');
+    return pascal + 'Styles';
+  }
+
+  function compile(file) {
+    const out = file.replace(/\.scss$/, '.js');
+    const exportName = toExportName(file);
+    console.log(`[styles-watch] Compiling ${file} -> ${out} (export ${exportName})`);
+    const script = path.resolve(__dirname, 'compile-scss-to-lit.cjs');
+    const child = spawn(process.execPath, [script, file, out, exportName], { stdio: 'inherit' });
+    child.on('close', code => {
+      if (code === 0) console.log(`[styles-watch] Compiled ${file}`);
+      else console.error(`[styles-watch] Failed (${code}) compiling ${file}`);
+    });
+  }
+
+  const root = process.cwd();
+  const srcDir = fs.existsSync(path.join(root, 'src')) ? path.join(root, 'src') : root;
+  const scssFiles = findScssFiles(srcDir);
+  if (!scssFiles.length) {
+    console.log('No .styles.scss files found to watch in', srcDir);
+    return;
+  }
+
+  const watcher = chokidar.watch(scssFiles, {
+    ignoreInitial: false,
+    awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 100 }
+  });
+
+  const debounceTimers = new Map();
+  function scheduleCompile(file) {
+    if (debounceTimers.has(file)) clearTimeout(debounceTimers.get(file));
+    debounceTimers.set(file, setTimeout(() => {
+      compile(file);
+      debounceTimers.delete(file);
+    }, 120));
+  }
+
+  watcher.on('add', file => { console.log('[styles-watch] Added', file); scheduleCompile(file); });
+  watcher.on('change', file => { console.log('[styles-watch] Changed', file); scheduleCompile(file); });
+  watcher.on('unlink', file => console.log('[styles-watch] Removed', file));
+}
+` %>

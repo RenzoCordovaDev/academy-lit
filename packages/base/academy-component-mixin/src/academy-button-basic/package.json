@@ -8,6 +8,7 @@
     "./locales.json": "./locales.json"
   },
   "files": ["/src/", "/demo/", "index.js", "locales.json"],
+  "publishConfig": { "access": "public" },
   "scripts": {
     "dev": "vite demo",
     "build": "vite build",

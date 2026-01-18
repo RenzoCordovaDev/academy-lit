@@ -7,21 +7,21 @@
     ".": "./index.js",
     "./locales.json": "./locales.json"
   },
-  "files": ["/src/", "/demo/", "index.js", "locales.json"],
+  "files": ["/src/", "/demo/", "/scripts/", "index.js", "locales.json"],
   "scripts": {
-    "build:styles": "node ../../../scripts/compile-scss-to-lit.cjs src/<%= componentFileBase %>.styles.scss src/<%= componentFileBase %>.styles.js <%= componentClassName %>Styles",
+    "build:styles": "node ./scripts/compile-scss-to-lit.cjs src/<%= componentFileBase %>.styles.scss src/<%= componentFileBase %>.styles.js <%= componentClassName %>Styles",
     "dev": "pnpm run build:styles && vite demo",
     "build": "pnpm run build:styles && vite build",
     "test": "web-test-runner \"src/**/*.test.js\""
   },
   "dependencies": {
-    "@academy-lit/academy-core": "workspace:*",
-    "@academy-lit/academy-component-mixin": "workspace:*",
-    "@academy-lit/academy-intl-mixin": "workspace:*",
+    "@academy-lit/academy-core": "^1.0.0",
+    "@academy-lit/academy-component-mixin": "^1.0.0",
+    "@academy-lit/academy-intl-mixin": "^1.0.0",
     "lit": "^3.0.0"
   },
   "devDependencies": {
-    "@academy-lit-components/academy-helper-demo": "workspace:*",
+    "@academy-lit-components/academy-helper-demo": "^1.0.0",
     "vite": "^5.0.0",
     "sass": "^1.69.0",
     "@web/test-runner": "^0.18.0",
@@ -29,5 +29,6 @@
   },
   "peerDependencies": {
     "lit": "^3.0.0"
-  }
+  },
+  "publishConfig": { "access": "public" }
 }

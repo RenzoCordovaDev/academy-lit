@@ -7,6 +7,7 @@
     ".": "./index.js"
   },
   "files": ["/src/", "index.js"],
+  "publishConfig": { "access": "public" },
   "scripts": {
     "build": "",
     "test": ""

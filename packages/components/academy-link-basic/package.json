@@ -8,6 +8,7 @@
     "./locales.json": "./locales.json"
   },
   "files": ["/src/", "/demo/", "index.js", "locales.json"],
+  "publishConfig": { "access": "public" },
   "scripts": {
     "build:styles": "node ../../../scripts/compile-scss-to-lit.cjs src/academy-link-basic.styles.scss src/academy-link-basic.styles.js AcademyLinkBasicStyles",
     "dev": "pnpm run build:styles && vite demo",
