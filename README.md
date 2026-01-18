@@ -1,5 +1,7 @@
 # Ecosistema Academy Lit Components
 
+**Versión actual:** 1.0.1
+
 Repositorio monorepo que contiene un ecosistema para crear, desarrollar y publicar Web Components con Lit, con una CLI para scaffolding, paquetes core con mixins/utilidades y un catálogo de componentes independientes.
 
 Este README describe la arquitectura, paquetes principales, convenciones, uso de la CLI, integración con demos (incluyendo forwarding de eventos desde iframes), pattern de internacionalización y flujo de publicación.
