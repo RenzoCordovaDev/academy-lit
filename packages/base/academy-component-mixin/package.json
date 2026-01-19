@@ -10,8 +10,8 @@
     "test": ""
   },
   "dependencies": {
-    "@academy-lit/academy-intl-mixin": "workspace:*",
-    "@academy-lit/scoped-elements-mixin": "workspace:*",
+    "@academy-lit/academy-intl-mixin": "^1.0.0",
+    "@academy-lit/scoped-elements-mixin": "^1.0.0",
     "lit": "^3.0.0"
   },
   "peerDependencies": {

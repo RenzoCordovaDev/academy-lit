@@ -59,7 +59,7 @@ importers:
 
   packages/base/academy-core: {}
 
-  packages/base/academy-helper-demo:
+  packages/components/academy-helper-demo:
     dependencies:
       '@academy-lit/academy-core':
         specifier: workspace:*
@@ -97,7 +97,7 @@ importers:
     devDependencies:
       '@academy-lit-components/academy-helper-demo':
         specifier: workspace:*
-        version: link:../../base/academy-helper-demo
+        version: link:../../components/academy-helper-demo
       '@open-wc/testing':
         specifier: ^4.0.0
         version: 4.0.0
@@ -128,7 +128,7 @@ importers:
     devDependencies:
       '@academy-lit-components/academy-helper-demo':
         specifier: workspace:*
-        version: link:../../base/academy-helper-demo
+        version: link:../../components/academy-helper-demo
       '@open-wc/testing':
         specifier: ^4.0.0
         version: 4.0.0

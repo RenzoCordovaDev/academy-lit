@@ -83,7 +83,7 @@ cd packages/base/academy-core && npm publish --access public
 cd ../scoped-elements-mixin && npm publish --access public
 cd ../academy-intl-mixin && npm publish --access public
 cd ../academy-component-mixin && npm publish --access public
-cd ../academy-helper-demo && npm publish --access public
+cd ../components/academy-helper-demo && npm publish --access public
 ```
 
 With Lerna:

@@ -132,7 +132,7 @@ Snippet incluido en demos generados (resumen):
 
 ## `academy-helper-demo`
 
-`packages/base/academy-helper-demo/` contiene un componente que sirve como contenedor de demos:
+`packages/components/academy-helper-demo/` contiene un componente que sirve como contenedor de demos:
 - Controles: locale, mode, viewport, ambient, cases.
 - `showEvents` (control de visibilidad del control de eventos) y `showEventsLog` (estado del panel del log).
 - `only-custom` atributo para aceptar solo CustomEvents.
@@ -249,7 +249,7 @@ Scripts comunes:
 
   ## `academy-helper-demo` (contenedor de demos)
 
-  Ubicación: `packages/base/academy-helper-demo/`.
+  Ubicación: `packages/components/academy-helper-demo/`.
 
   Características principales:
   - Controles globales para locale, modo visual, viewport y ambient.
