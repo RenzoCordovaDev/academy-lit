@@ -64,6 +64,26 @@ jobs:
           git clean -fdx || true
           echo "Git status after cleaning:" && git status --porcelain=1 --branch || true
 
+      - name: Debug git state before publish
+        run: |
+          echo "=== git status ==="
+          git status --porcelain=1 --branch || true
+          echo "=== modified tracked files ==="
+          git ls-files -m || true
+          if [ -f pnpm-lock.yaml ]; then
+            echo "=== pnpm-lock.yaml diff ==="
+            git --no-pager diff -- pnpm-lock.yaml || true
+          fi
+          echo "Ensuring clean state (reset + checkout pnpm-lock.yaml)"
+          git reset --hard || true
+          if [ -f pnpm-lock.yaml ]; then
+            git checkout -- pnpm-lock.yaml || true
+          fi
+          git clean -fdx || true
+          echo "=== git status after final revert ==="
+          git status --porcelain=1 --branch || true
+          git ls-files -m || true
+
       - name: Publish changed packages (from package.json versions)
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
