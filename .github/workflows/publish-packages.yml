@@ -56,6 +56,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+        - name: Ensure clean working tree
+          run: |
+            echo "Git status before cleaning:" && git status --porcelain=1 --branch || true
+            # Revert any changes and remove untracked files to ensure lerna sees a clean tree
+            git reset --hard || true
+            git clean -fdx || true
+            echo "Git status after cleaning:" && git status --porcelain=1 --branch || true
+
       - name: Publish changed packages (from package.json versions)
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
