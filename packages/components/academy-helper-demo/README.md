@@ -1,10 +1,10 @@
-# @academy-lit-components/helper-demo
+# @academy-lit-components/academy-helper-demo
 
 Helper component for creating interactive demos of Academy Lit components.
 
 ## Features
 
-- 🌍 **Locale selector** - Switch between languages (es-PE, en-EN, pt-BR)
+- 🌍 **Locale selector** - Switch between languages (es-PE, en-EN)
 - 🌓 **Mode selector** - Toggle between light and dark modes
 - 🎨 **Ambient selector** - Change ambient/theme (primary, secondary, etc.)
 - 📋 **Event logger** - Capture and display component events
@@ -59,6 +59,14 @@ npm install --save-dev @academy-lit-components/helper-demo
 | `locale-changed` | Fired when locale changes |
 | `mode-changed` | Fired when mode changes |
 | `ambient-changed` | Fired when ambient changes |
+
+## API
+
+- `addEvent(eventData)` — método público propuesto para añadir un evento al log desde contextos same-origin. `eventData` debe tener `{ time, type, detail }`.
+
+## iframe integration / postMessage
+
+When demos run inside iframes, the helper supports receiving forwarded events via `postMessage`. Demos should `postMessage({ __academyDemoEvent: true, event: { type, detail } }, '*')` so the helper can normalize and store them.
 
 ## Automatic Propagation
 
