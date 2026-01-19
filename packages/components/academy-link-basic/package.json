@@ -23,13 +23,13 @@
     "test": "web-test-runner \"src/**/*.test.js\""
   },
   "dependencies": {
-    "@academy-lit/academy-component-mixin": "workspace:*",
-    "@academy-lit/academy-core": "workspace:*",
-    "@academy-lit/academy-intl-mixin": "workspace:*",
+    "@academy-lit/academy-component-mixin": "1.0.1",
+    "@academy-lit/academy-core": "1.0.1",
+    "@academy-lit/academy-intl-mixin": "1.0.1",
     "lit": "^3.0.0"
   },
   "devDependencies": {
-    "@academy-lit-components/academy-helper-demo": "workspace:*",
+    "@academy-lit-components/academy-helper-demo": "1.0.1",
     "@open-wc/testing": "^4.0.0",
     "@web/test-runner": "^0.18.0",
     "sass": "^1.69.0",
@@ -37,5 +37,6 @@
   },
   "peerDependencies": {
     "lit": "^3.0.0"
-  }
+  },
+  "gitHead": "2b3ff44c51eeeeb958e06a3b4ce378250cc72e52"
 }
