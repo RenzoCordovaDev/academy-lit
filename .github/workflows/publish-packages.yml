@@ -84,6 +84,14 @@ jobs:
           git status --porcelain=1 --branch || true
           git ls-files -m || true
 
+      - name: Force checkout CI commit
+        run: |
+          echo "Forcing checkout to current commit $GITHUB_SHA"
+          git fetch --no-tags --prune --depth=1 origin || true
+          git checkout --force "$GITHUB_SHA" || git reset --hard "$GITHUB_SHA" || true
+          git clean -fdx || true
+          echo "Git status after force checkout:" && git status --porcelain=1 --branch || true
+
       - name: Publish changed packages (from package.json versions)
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
