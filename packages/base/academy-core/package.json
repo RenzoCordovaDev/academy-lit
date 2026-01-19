@@ -1,14 +1,21 @@
 {
   "name": "@academy-lit/academy-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
-  "files": ["src", "index.js"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "src",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./index.js",
     "./tokens": "./src/tokens.js",
-    "./utils": "./src/utils.js"
+    "./utils": "./src/utils.js",
+    "./tokens/modern-warm-palette.css": "./src/tokens/modern-warm-palette.css",
+    "./tokens/*": "./src/tokens/*"
   },
   "scripts": {
     "build": "",

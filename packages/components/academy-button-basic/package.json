@@ -1,14 +1,21 @@
 {
   "name": "@academy-lit-components/academy-button-basic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "index.js",
   "exports": {
     ".": "./index.js",
     "./locales.json": "./locales.json"
   },
-  "files": ["/src/", "/demo/", "index.js", "locales.json"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "/src/",
+    "/demo/",
+    "index.js",
+    "locales.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build:styles": "node ../../../scripts/compile-scss-to-lit.cjs src/academy-button-basic.styles.scss src/academy-button-basic.styles.js AcademyButtonBasicStyles",
     "dev": "pnpm run build:styles && vite demo",
@@ -16,17 +23,17 @@
     "test": "web-test-runner \"src/**/*.test.js\""
   },
   "dependencies": {
-    "@academy-lit/academy-core": "^1.0.0",
-    "@academy-lit/academy-component-mixin": "^1.0.0",
-    "@academy-lit/academy-intl-mixin": "^1.0.0",
+    "@academy-lit/academy-component-mixin": "workspace:*",
+    "@academy-lit/academy-core": "workspace:*",
+    "@academy-lit/academy-intl-mixin": "workspace:*",
     "lit": "^3.0.0"
   },
   "devDependencies": {
-    "@academy-lit-components/academy-helper-demo": "^1.0.0",
-    "vite": "^5.0.0",
-    "sass": "^1.69.0",
+    "@academy-lit-components/academy-helper-demo": "workspace:*",
+    "@open-wc/testing": "^4.0.0",
     "@web/test-runner": "^0.18.0",
-    "@open-wc/testing": "^4.0.0"
+    "sass": "^1.69.0",
+    "vite": "^5.0.0"
   },
   "peerDependencies": {
     "lit": "^3.0.0"

@@ -1,5 +1,5 @@
 import { css } from 'lit';
-import '../../academy-core/src/tokens/modern-warm-palette.css';
+import '../../../base/academy-core/src/tokens/modern-warm-palette.css';
 
 export const academyHelperDemoStyles = css`
   :host {

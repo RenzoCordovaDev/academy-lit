@@ -59,15 +59,6 @@ importers:
 
   packages/base/academy-core: {}
 
-  packages/components/academy-helper-demo:
-    dependencies:
-      '@academy-lit/academy-core':
-        specifier: workspace:*
-        version: link:../academy-core
-      lit:
-        specifier: ^3.0.0
-        version: 3.3.2
-
   packages/base/academy-intl-mixin:
     dependencies:
       lit:
@@ -97,7 +88,7 @@ importers:
     devDependencies:
       '@academy-lit-components/academy-helper-demo':
         specifier: workspace:*
-        version: link:../../components/academy-helper-demo
+        version: link:../academy-helper-demo
       '@open-wc/testing':
         specifier: ^4.0.0
         version: 4.0.0
@@ -110,6 +101,15 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.4.21(@types/node@25.0.9)(sass@1.97.2)
+
+  packages/components/academy-helper-demo:
+    dependencies:
+      '@academy-lit/academy-core':
+        specifier: ^1.0.0
+        version: 1.0.0
+      lit:
+        specifier: ^3.0.0
+        version: 3.3.2
 
   packages/components/academy-link-basic:
     dependencies:
@@ -128,7 +128,7 @@ importers:
     devDependencies:
       '@academy-lit-components/academy-helper-demo':
         specifier: workspace:*
-        version: link:../../components/academy-helper-demo
+        version: link:../academy-helper-demo
       '@open-wc/testing':
         specifier: ^4.0.0
         version: 4.0.0
@@ -143,6 +143,9 @@ importers:
         version: 5.4.21(@types/node@25.0.9)(sass@1.97.2)
 
 packages:
+
+  '@academy-lit/academy-core@1.0.0':
+    resolution: {integrity: sha512-6U+wFQTlyJ6HadNFtCHaBUhPuN1EAW0wXOX1iLylfnNCUrywBzk8B3UHYjHeiDjHg+68k/ihbbvgciErii+GXA==}
 
   '@babel/code-frame@7.28.6':
     resolution: {integrity: sha512-JYgintcMjRiCvS8mMECzaEn+m3PfoQiyqukOMCCVQtoJGYJw8j/8LBJEiqkHLkfwCcs74E3pbAUFNg7d9VNJ+Q==}
@@ -3684,6 +3687,8 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
+
+  '@academy-lit/academy-core@1.0.0': {}
 
   '@babel/code-frame@7.28.6':
     dependencies:

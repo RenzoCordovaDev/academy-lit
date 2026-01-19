@@ -1,17 +1,22 @@
 {
   "name": "@academy-lit/academy-component-mixin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
-  "files": ["src", "index.js"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "src",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "",
     "test": ""
   },
   "dependencies": {
-    "@academy-lit/academy-intl-mixin": "^1.0.0",
-    "@academy-lit/scoped-elements-mixin": "^1.0.0",
+    "@academy-lit/academy-intl-mixin": "workspace:*",
+    "@academy-lit/scoped-elements-mixin": "workspace:*",
     "lit": "^3.0.0"
   },
   "peerDependencies": {
